@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>private chatt</title>
+    <link rel="stylesheet" href="room.css">
+    
+   
+</head>
+<body data-page="room">
+    <div class="chat-window">
+
+        <div class="user-profile">
+            <img src="account.png" alt="Profile Picture" class="profile-img">
+            <h3 id="username"><%=roomdata.roomname  %></h3>
+            <button id="closeroom" class="small-btn">Close Room</button>
+            <button id="leaveroom" class="small-btn">Leave</button>
+        </div>
+        <div class="messages">
+            <!-- Example messages -->
+            <div class="message left">
+                <p>Hey! How are you?</p>
+                <span class="time">10:15 AM</span>
+            </div>
+            <div class="message right">
+                <p>I'm good, thanks! How about you?</p>
+                <span class="time">10:16 AM</span>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="message-input" placeholder="Type a message...">
+            <button id="send-btn" class="primary-btn">Send</button>
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementById("leaveroom").addEventListener("click",()=>{
+        window.location.href="/logout";
+    })
+
+</script>
+
+
+
+</body>
+</html>

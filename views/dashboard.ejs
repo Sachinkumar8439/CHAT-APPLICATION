@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard</title>
+    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="CSS/seleberation.css">
+    <link rel="stylesheet" href="CSS/operation.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.2/socket.io.js"
+        integrity="sha512-VJ6+sp2E5rFQk05caiXXzQd1wBABpjEj1r5kMiLmGAAgwPItw1YpqsCCBtq8Yr1x6C49/mTpRdXtq8O2RcZhlQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="user-profile">
+                <img src="man.png" alt="Profile Picture" class="profile-img">
+                <h3 id="username">
+                    <%= user.username %>
+                </h3>
+
+                <!-- <button class=""><a href="/logout">logout</a></button> -->
+                 <button style="position: relative; background-color: rgb(255, 255, 255);color: rgb(0, 0, 0);margin-right: 40px;padding: 5px;border-radius:10px ;cursor: pointer;" id="dark-mode-btn">dark mode</button>
+                <button style="background:none;" class="prifile-menu-btn"><img src="menu-burger.png" alt=""
+                        width="20px"></button>
+            </div>
+            <div class="user-list">
+                <div class="navbar">
+                    <button class="nav-item btn" onclick="showPage('connections')">Connections</button>
+                    <button id="nottification-btn" class="nav-item btn"
+                        onclick="showPage('nottification')">Notification</button>
+                    <button class="nav-item btn" onclick="showPage('all-users')">Users</button>
+                    <button class="nav-item btn" onclick="showPage('groups')">Groups</button>
+                </div>
+                <div class="content">
+                    <div style="display: none;" id="connections" class="page">Welcome to the Connection Page!</div>
+                    <div id="groups" class="page" style="display: none;">Explore Groups Here!</div>
+                    <div id="all-users" class="page">
+                        <form action="/search" class="searchbar" id="searching-form">
+                            <input id="searchusername" type="text" placeholder="Search Users...">
+                        </form>
+                        <ul class="searched-user">
+                            <% if (users.length> 0) { %>
+                                <% for (let i=0; i < users.length; i++) { %>
+                                    <li class="users" data-name="<%=users[i]['username']%>"
+                                        data-id="<%=users[i]['_id']%>">
+                                        <img src="man.png" alt="User1" class="user-img">
+                                        <p>
+                                            <%= users[i].username %>
+                                        </p>
+                                        <div class="status-follow-icon">
+                                            <p id="<%=users[i]['_id']%>-unread"
+                                                style="background-color: rgb(45, 122, 22);color: white;padding: 3px 10px;border-radius: 50%;display: none;font-size: 20px;">
+                                            </p>
+                                            <% if (users[i].is_online==='1' ) { %>
+                                                <p class="status" id="<%=users[i]['_id']%>-status"></p>
+                                                <% } %>
+                                            <p id="follow-btn" style="font-size: 30px;"
+                                                follow-id="<%=users[i]['_id']%>">+</p>
+                                        </div>
+                                    </li>
+
+                                    <% } %>
+                                        <% } else { %>
+                                            <li>No users available</li>
+                                            <% } %>
+                        </ul>
+
+                    </div>
+                    <div page-id="<%=user._id %>" id="nottification" class="page" style="display: none;">
+
+                        <% if (notification_sender_users) { let i=0;%>
+                            <% notification_sender_users.user.forEach(user=> { %>
+                                <div class="notification-list" data-name="<%= user.username %>"
+                                    data-id="<%= user._id %>">
+                                    <img src="man.png" alt="0" class="user-img" width="15px">
+                                    <p style="font-size:13px">
+                                        <%= user.username %>
+                                            <%= notification_sender_users.notification[i].message %>
+                                    </p>
+                                    <div>
+                                        <button id="delete-request" delete-id="<%= user._id %>"
+                                            class="response-btn">delete</button>
+                                        <button id="confirm-request" confirm-id="<%= user._id %>"
+                                            class="response-btn">confirm</button>
+                                    </div>
+                                </div>
+                                <% i++; }); %>
+                                    <% } else { %>
+                                        <p>No notifications available.</p>
+                                        <% } %>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Chat Window -->
+        <div class="start-head">
+            <div class="box">
+                <h1>hey there ! </h1>
+                <p>click to start the chat ...</p>
+            </div>
+
+        </div>
+        <div hidden id="chat-window">
+            <div class="user-profile">
+                <img src="arrow-small-left (1).png" alt="" class="backbtn option">
+                <img src="man.png" alt="Profile Picture" class="profile-img">
+                <h3 id="chatusername"></h3>
+                <button class="prifile-menu-btn"><img id="chat-menu" src="menu-dots-vertical.png" alt=""
+                        width="20px"></button>
+
+            </div>
+            <div class="messages">
+                <!-- Example messages -->
+                <!-- <div class="message right">
+                        <div style="display: flex;" class="flexing">
+                            <img class="message-menu" src="menu-dots-vertical.png" alt="">
+                            <p>I'm good, thanks! How about you?</p>
+                        </div>
+                        <span class="time">10:16 AM</span>
+                    </div> -->
+                <!-- <div class="message left">
+
+                        <p>Hey! How are you?</p>
+                        <span class="time">10:15 AM</span>
+
+                    </div>  -->
+
+
+            </div>
+            <ul id="emoji-box"
+                style="border-radius: 10px;display: none;border: 4px solid rgb(0, 0, 0); overflow-x:auto; position: absolute;top: 40%;left: 20px;background-color: rgb(23, 78, 110);padding: 5px 4px;margin: 0px 10px;width: 75%;">
+                <li class="emoji">🥰</li>
+                <li class="emoji">😍</li>
+                <li class="emoji">😊</li>
+                <li class="emoji">😇</li>
+                <li class="emoji">🤗</li>
+                <li class="emoji">😘</li>
+                <li class="emoji">🥺</li>
+                <li class="emoji">😌</li>
+                <li class="emoji">😚</li>
+                <li class="emoji">🤩</li>
+                <li class="emoji">😂</li>
+                <li class="emoji">🤣</li>
+                <li class="emoji">❤️</li>
+                <li class="emoji">🎉</li>
+                <li class="emoji">🙏</li>
+                <li class="emoji">👍</li>
+                <li class="emoji">🔥</li>
+                <li class="emoji">🎂</li>
+                <li class="emoji">😎</li>
+                <li class="emoji">💪</li>
+                <li class="emoji">😢</li>
+                <li class="emoji">😜</li>
+                <li class="emoji">🌈</li>
+                <li class="emoji">😴</li>
+                <li class="emoji">💯</li>
+                <li class="emoji">🤔</li>
+                <li class="emoji">👏</li>
+                <li class="emoji">🎶</li>
+                <li class="emoji">🤤</li>
+                <li class="emoji">💖</li>
+                <li class="emoji">🌟</li>
+            </ul>
+            <div id="seen-typing-box" style="height: 30px; display: none;flex-direction:row;align-items: center">
+                <span id="typing"
+                    style="width: fit-content;display: none; font-size:13px;border-radius:25px;background-color:rgb(38, 96, 110);color:white;padding:5px 5px;margin: 2px 5px">
+                    typing...</span>
+                <span style="display: none;" class="seen" id="seentag">seen</span>
+
+            </div>
+
+            <div class="menu" id="menu">
+                <div class="menu-item" onclick="performAction('Reply')">Reply</div>
+                <div class="menu-item" onclick="performAction('Edit')">Edit</div>
+                <div class="menu-item" id="delete-message">Delete</div>
+                <div class="menu-item" onclick="performAction('Clear Chat')">Clear Chat</div>
+                <div class="menu-item" onclick="performAction('Study Mode')">Study Mode</div>
+            </div>
+            <form action="">
+                <div class="popup" id="popup">
+                    <h2>Are you sure?</h2>
+                    <p>i am deleting this ? <strong>Confirm or Cancel</strong></p>
+                    <button id="delete-confirm" class="btn confirm">Confirm</button>
+                    <button id="cancel" class="btn cancel">Cancel</button>
+                </div>
+            </form>
+            <div class="chat-input">
+                <form action="/save-chat" id="chating-form">
+                    <input type="text" name="message" id="message-input" placeholder="Type a message..." required>
+                    <button type="submit" id="send-btn">
+                        <img src="sendmessagebtn.png" alt="" width="28px">
+                    </button>
+                </form>
+            </div>
+
+        </div>
+        <script>
+        let sender_id = '<%= user._id %>';
+            let unread = '<%= unreaded %>';
+            window.sender_id = sender_id;
+            window.unread = unread;
+            
+            </script>
+            
+        <script src="script/functions.js"></script>
+        <script src="script/script.js"></script>
+
+
+
+</body>
+
+</html>

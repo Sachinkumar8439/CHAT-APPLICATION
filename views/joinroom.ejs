@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="joinroom">
+    <div class="form-container">
+        <!-- <img src="logo.webp" alt="Logo" class="logo"> -->
+        <h1>Enter Detailes to Join The Room</h1>
+        <!-- <p>Create your account</p> -->
+        <form action="/joinroom" method="post" id="joinroomform">
+            <div class="input-group">
+                <input type="text" name="username" placeholder="Your name" required />
+            </div>
+            <div class="input-group">
+                <input type="password" name="code" placeholder="Enetr Room Code" required />
+            </div>
+            
+            <button type="submit" id="joinroombtn" class="primary-btn">Join</button>
+            
+            <p>try latter <a href="/login">Go back</a></p>
+        </form>
+    </div>
+
+
+
+</body>
+</html>

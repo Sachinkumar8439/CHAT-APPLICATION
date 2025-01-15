@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="createroom">
+    <div class="form-container">
+        <h1>Create Your Room</h1>
+        <form action="/createroom"  method="post" id ="roomcreateform">
+            <div class="input-group">
+                <input type="text" name="name" placeholder="Your name" required />
+            </div>
+            <div class="input-group">
+                <input type="email" name="email" placeholder="Enter your email" required />
+            </div>
+            <div class="input-group">
+                <input type="text" name="roomname" placeholder="Room name" required />
+            </div>
+            <div class="input-group">
+                <input type="password" name="roomcode" placeholder="Make a room code" required />
+                <div class="description">
+                    <% if(typeof message !=='undefined' ){ %>
+                        <p style="text-decoration: underline; margin:2px;font-size:10px;color: rgb(255, 4, 4);">
+                            <%= message %>
+                        </p>
+                        <% } %>
+                </div>
+            </div>
+            <button id="roomcreatebtn" class="primary-btn" type="submit">Create and Join</button>
+            <p>Already have an account? <a href="/login">Back</a></p>
+        </form>
+    </div>
+
+
+</body>
+</html>
