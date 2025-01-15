@@ -90,7 +90,7 @@ Ensure you have the following installed on your system:
 1. Open your terminal/command prompt.
 2. Run the following command to clone the repository:
    ```bash
-   git clone https://github.com/<your-username>/<repository-name>.git
+   git clone https://github.com/Sachinkumar8439/CHAT-APPLICATION.git
    ```
 3. Navigate to the project directory:
    ```bash
