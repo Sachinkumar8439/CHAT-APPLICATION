@@ -1,0 +1,139 @@
+.group-navbar{
+/* width: 100%; */
+border-top: 2px solid green;
+display: flex;
+padding: 5px;
+
+align-items: center;
+}
+#search_group
+{
+height: 25px;
+flex: 1;
+border-radius: 10px;
+background-color: rgb(224, 224, 221);
+border: none;
+padding: 5px;
+
+
+}
+#create-group-btn{
+    font-size: 30px;
+    width: 35px;
+    height: 35px;
+    margin: 0px 3px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+
+}
+
+.create-group-form{
+    position: relative;
+    width: 450px;
+
+    /* background-color: #ffffff; */
+    display: flex;
+    /* flex-direction: column; */
+    overflow-y: auto;
+    padding: 10px;
+    /* display: flex; */
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+}
+.group-create-header-box{
+    /* border: 2px solid blue; */
+    width: 100%;
+    
+
+}
+.group-create-nav{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    /* justify-content: space-around; */
+}
+#search-input-for-find-users{
+    /* border: 2px solid green; */
+    flex: 1;
+    padding: 5px;
+    border: none;
+    background-color: rgb(246, 246, 246);
+    border-radius: 10px;
+
+}
+#search-btn-for-create-group{
+    border-radius: 10px;
+    background-color: rgb(235, 233, 226);
+    cursor: pointer;
+    border: none;
+    padding: 5px;
+
+}
+.group-create-main-body{
+    flex: 1;
+    /* border: 2px solid black; */
+    margin: 5px 0px;
+    border-radius: 5px;
+    padding: 5px;
+    overflow-y: auto;
+    background-color: aliceblue;
+
+
+}
+.users-for-create-group{
+    display: flex;
+    justify-content:space-between;
+    /* align-items: center; */
+    border: 2px solid black;
+    height: 60px;
+    background-color: rgb(217, 222, 222);
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 1px;
+
+}
+.img-username{
+    display: flex;
+    flex: 1;
+    /* border: 2px solid black; */
+    margin: 0px 10px ;
+    align-items: center;
+}
+.users-for-create-group img{
+    /* border: 2px solid black; */
+    width: 40px;
+    height: 40px;
+    margin:  10px;
+
+}
+.users-for-create-group h3{
+    /* border: 2px solid black; */
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.group-checkbox{
+    background-color: aqua;
+    cursor: pointer;
+    margin-right: 20px;
+
+
+        }
+        .group-create-footer{
+            position: relative;
+            /* border: 2px solid green; */
+            height: 40px;
+            display: flex;
+            justify-content: center;
+        }
+        .registergroup{
+            border-radius: 10px;
+            padding: 5px;
+            border: none;
+            cursor: pointer;
+            background-color: rgb(16, 16, 16);
+            color: white;
+
+        }

@@ -1,0 +1,185 @@
+   /* Celebration Box */
+   .celebration-box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #ffcc80;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* Celebration Text */
+  .celebration-text {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #ff5722;
+    animation: textAnimation 2s ease-in-out infinite;
+    z-index: 10;
+  }
+
+  @keyframes textAnimation {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+  }
+
+  /* Button */
+  .celebrate-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #ff5722;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 10;
+  }
+
+  .celebrate-button:hover {
+    background-color: #e64a19;
+  }
+
+  /* Falling Emojis and Flowers */
+  .emoji, .flower {
+    position: absolute;
+    font-size: 20px;
+    margin: 0; /* Default margin 0 */
+    border-radius: 50%; /* Circular emojis */
+    animation: fall linear; /* Animation duration dynamically set in JS */
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateY(-300px); /* Start above the top of the viewport */
+    }
+    100% {
+      transform: translateY(calc(100vh - 40px)); /* Fall to the bottom */
+    }
+  }
+
+  .seleberation-text
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #13383d;
+    background-color:rgb(12, 34, 27);
+    padding: 20px;
+    border-radius: 10%;
+
+
+  }
+  .seleberation-text h3{
+    color: rgb(231, 213, 236);
+    border-radius: 20px;
+    /* padding: 5px; */
+    /* background-color:#423003; */
+    margin: 5px 0px;
+    font-size: 20px;
+  }
+
+
+  .seleberation-text span {
+    font-size: 20px;
+    rotate: 45deg;
+    color: rgb(215, 109, 33);
+    background-color:#ffcc80;
+    padding:0px 10px;
+    margin: 5px 0px;
+    border-radius: 20px;
+  }
+  .emo{
+  font-size: 30px;
+  }
+
+  .happy{
+    font-size: 40px;
+  }
+
+  .frame {
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    border: 10px solid #ff5722;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    pointer-events: none; /* Prevent interaction */
+    z-index: 2;
+  }
+
+  .inner-frame {
+    position: absolute;
+    width: 85%;
+    height: 85%;
+    border: 5px dashed #ff7043;
+    border-radius: 10px;
+    top: 7.5%;
+    left: 7.5%;
+    pointer-events: none; /* Prevent interaction */
+    z-index: 2;
+  }
+
+  /* Full Moon */
+  .moon {
+    position: absolute;
+    top: 10%;
+    left: 80%;
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+    z-index: 1;
+  }
+
+  /* Stars and Twinkling Stars */
+  .star {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: twinkle 1.5s infinite alternate ease-in-out;
+    z-index: 0;
+  }
+
+  .twinkling-star {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: blink 2s infinite alternate;
+    z-index: 0;
+  }
+
+  @keyframes twinkle {
+    0% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+
+  @keyframes blink {
+    0% {
+      opacity: 0.7;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1.3);
+    }
+  }

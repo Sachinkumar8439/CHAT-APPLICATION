@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>varification</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <style>
+         .otpbox input {
+            width: 25px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .otpbox input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <img src="appicon.jpg" alt="Logo" class="logo">
+        <h1>varification</h1>
+        <!-- <h3>check your device</h3> -->
+        <p>we sent a mail containg OTP</p>
+        <!-- <h3>Enter OTP</h3> -->
+        <form id="loginform" onsubmit="submitOtp(event)">
+            <div class="otpbox">
+              <input class="otpvalue" type="text" maxlength="1" required>
+              <input class="otpvalue" type="text" maxlength="1" required>
+              <input class="otpvalue" type="text" maxlength="1" required>
+              <input class="otpvalue" type="text" maxlength="1" required>
+              <input class="otpvalue" type="text" maxlength="1" required>
+              <input class="otpvalue" type="text" maxlength="1" required>
+            </div>
+            <div class="description" style="height: 30px;">
+              <p id="message-box" style="font-size:13px;color: rgb(212, 192, 34);"></p>
+            </div>
+            <button id="loginbtn" class="primary-btn" type="submit">Proceed</button>
+          </form>
+          
+        <!-- <a href="/forgetpassword" class="forgot-password">Forgot Password?</a> -->
+        <p><a href="/forgetpassword">back</a></p>
+    </div>
+    <script>
+       document.querySelector('.otpvalue').focus();
+        function handleOtpInput(event) {
+            const currentInput = event.target;
+            // console.log(currentInput, " ", event.key, " ", event.keyCode);
+
+            if (event.key > 0 && event.key < 9 && event.key === 'Backspace') {
+                event.preventDefault();
+                console.log("hey baby");
+                return;
+            }
+            if (currentInput.value.length <= 1) {
+                if (event.key === "Backspace") {
+                    if (currentInput.value === "") {
+                        const prevInput = currentInput.previousElementSibling;
+                        if (prevInput && prevInput.classList.contains("otpvalue")) {
+                            prevInput.value = "";
+                            prevInput.focus();
+                        }
+                    }
+
+                } else if (currentInput.value.length == 1) {
+                    const nextInput = currentInput.nextElementSibling;
+
+                    if (nextInput && nextInput.classList.contains("otpvalue")) {
+                        nextInput.value = "";
+                        nextInput.focus();
+                    }
+                    else {
+                        currentInput.blur();
+                    }
+                }
+
+            }
+
+            else {
+                if (event.key === "Backspace") {
+                    // const prevInput = currentInput.previousElementSibling;
+                    currentInput.value = "";
+
+                }
+            }
+
+
+
+        }
+
+        document.querySelectorAll(".otpvalue").forEach((input) => {
+            input.addEventListener("keydown", handleOtpInput);
+            input.addEventListener("input", (event) => {
+                let currentInput = event.target;
+                let value = currentInput.value;
+                console.log("value is ", value);
+                let nextInput = currentInput.nextElementSibling;
+                if (value.length == 1 && nextInput) {
+                    nextInput.focus();
+
+
+                }
+
+
+            });
+        });
+
+        function submitOtp(event) {
+  event.preventDefault(); // Prevent the form's default submission behavior
+
+  const otpvalues = document.querySelectorAll('.otpvalue');
+  let otp = Array.from(otpvalues).map(input => input.value).join('');
+
+  if (otp.length !== 6) {
+    document.getElementById('message-box').innerText = 'Please enter a 6-digit OTP!';
+    return;
+  }
+
+  // Send the OTP to the server via POST
+  fetch('/varification', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ otp }), // Send OTP as JSON
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        // Redirect to reset password page if OTP is correct
+        window.location.href = '/resetpassword';
+      } else {
+        // Display an error message if OTP is incorrect
+        document.querySelector('.otpvalue').focus();
+        document.getElementById('message-box').innerText = data.message || 'Invalid OTP. Please try again.';
+
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('message-box').innerText = 'An error occurred. Please try again later.';
+    });
+
+    otpvalues.forEach(input=>{
+      input.value=""
+    })
+
+
+}
+
+    </script>
+
+
+    
+</body>
+</html>

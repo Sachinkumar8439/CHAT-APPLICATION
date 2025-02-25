@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forget your password</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <img src="appicon.jpg" alt="Logo" class="logo">
+        <h1>Enter Email</h1>
+        <p>Enter your Email correctly we will send the OTP on this email</p>
+        <form id="forgetform" action="/requestPasswordReset" method="post">
+            <div class="input-group">
+                <input name="email" type="email" placeholder="Enter Email" required />
+                <!-- <img src="chaticon.webp" alt="" width="25px"> -->
+            </div>
+            <div class="description" style="height: 30px;">
+                <% if(typeof message !=='undefined' ){ %>
+                    <p id="message-box" style="margin:0px;font-size:13px;text-decoration:underline rgb(230, 230, 22);text-align: center;">
+                        <%= message %>
+                    </p>
+                    <% } %>
+            </div>
+            <input id="forget-request-btn" class="primary-btn" type="submit" value="Send Request"></input>
+        </form>
+        <p>if you need <a href="/">back</a></p>
+    </div>
+
+
+
+
+        
+
+
+    
+</body>
+</html>

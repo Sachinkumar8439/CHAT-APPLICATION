@@ -1,0 +1,156 @@
+/* Chat Window Styling */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.chat-window {
+    
+    background-color: #fff;
+    /* border: 2px solid red; */
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    height: 99vh;
+    box-shadow: -2px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  /* Aligning items horizontally */
+    padding: 8px;
+    /* margin-bottom: 30px; */
+    /* position: relative; */
+    gap: 2px; /* Adding space between elements */
+    background-color: #f1f1f1;
+    box-shadow: #333;
+}
+
+/* Profile image styling */
+.profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* Username styling */
+h3 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-left: 10px;  /* Space between image and username */
+    flex-grow: 1; /* Makes the username take available space */
+}
+
+/* Log out button - positioned at top-right */
+.small-btn {
+    background-color: #ff5722;
+    color: white;
+    margin: 5px;
+    border: none;
+    padding: 8px; /* Adjusted size for the logout button */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8rem; /* Slightly larger font for readability */
+    /* position: absolute; */
+    /* right: 5px; */
+}
+
+.small-btn:hover {
+    background-color: #e64a19;
+}
+
+
+/* Messages Styling */
+.messages {
+    flex-grow: 1;
+    overflow-y:scroll;
+    margin-bottom: 15px;
+    margin: 15px;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.left {
+    align-items: flex-start;
+    
+}
+
+.right {
+    align-items: flex-end;
+}
+
+.message p {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 80%;
+    word-wrap: break-word;
+    font-size: 1rem;
+}
+.left p{
+    background-color: #ff5722;
+    color: white;
+}
+
+.time {
+    font-size: 0.6rem;
+    color: #888;
+    padding: 2px;
+}
+
+/* Chat Input Styling */
+.chat-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+#message-input {
+    width: 95%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.primary-btn {
+    margin: 2px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 10px;
+    cursor: pointer;
+    margin: 0px 5px;
+}
+
+.primary-btn:hover {
+    background-color: #e64a19;
+}
+
+/* Media Queries for responsiveness */
+/* @media (max-width: 508px) {
+    .sidebar {
+        width: 100%;
+        padding: 15px;
+    }
+    .main-container {
+        flex-direction: column;
+    }
+    .chat-window {
+        padding: 15px;
+    }
+    .user-profile h3 {
+        font-size: 1rem;
+    }
+    .logout-btn {
+        padding: 6px 12px;
+        font-size: 0.7rem;
+    }
+} */

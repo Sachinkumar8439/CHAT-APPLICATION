@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+
+<div class="form-container">
+    <img src="appicon.jpg" alt="Logo" class="logo">
+    <h1>Sign Up</h1>
+    <p>Create your account</p>
+    <form action="/register" id="signupform" method="post">
+        <div class="input-group">
+            <input type="text" name="name" placeholder="Enter Name" required />
+        </div>
+        <div class="input-group">
+            <input type="text" name="username" placeholder="Enter Username" required />
+        </div>
+        <div class="input-group">
+            <input type="email" name="email" placeholder="Enter Email" required />
+        </div>
+        <div class="input-group">
+            <input id="password" name="password" type="password" placeholder="Password" required />
+        </div>
+        <p style="color: red;">
+            <p style="margin:0px;font-size:10px;color: rgb(176, 89, 89);padding:0;height: 12px;">
+                <% if(typeof message !=='undefined' ){ %>
+                <%=message%>
+                <% } %>
+            </p>
+        </p>
+        <input id="signupbtn" class="primary-btn" type="submit" value="Register">
+        <p>Or</p>
+        <button class="google-btn">Login with Google</button>
+        <p>Already have an account? <a href="/">Login</a></p>
+    </form>
+</div>
+

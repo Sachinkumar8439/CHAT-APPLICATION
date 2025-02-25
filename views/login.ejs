@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+
+<body>
+    
+    <div class="form-container">
+        <img src="appicon.jpg" alt="Logo" class="logo">
+        <h1>Log in</h1>
+        <p>Enter your credentials to log in</p>
+        <form id="loginform" action="/" method="post">
+            <div class="input-group">
+                <input name="email" type="email" placeholder="Enter Email" required />
+                <!-- <img src="chaticon.webp" alt="" width="25px"> -->
+            </div>
+            <div class="input-group">
+                <input name="password" type="password" placeholder="Enter Password" required />
+            </div>
+            <div class="description" style="height: 30px;">
+                <% if(typeof message !=='undefined' ){ %>
+                    <p id="messages" style="margin:0px;font-size:10px;color: rgb(176, 89, 89);">
+                        <%= message %>
+                    </p>
+                    <% } %>
+            </div>
+            <input id="loginbtn" class="primary-btn" type="submit" value="Login now"></input>
+        </form>
+        <a href="/forgetpassword" class="forgot-password">Forgot Password?</a>
+        <p>Don't have an account? <a href="/register">Sign Up</a></p>
+
+
+        <div class="temp-chat-link-box">
+            <button id="temp-btn" class="primary-btn">Chat Only</button>
+            <div id="chatitem" class="temp-chat-item" style="display: none;">
+                <button id="newroombtn" class="primary-btn small-btn">New Chat</button>
+                <button id="joinroombtn" class="primary-btn small-btn">Join a Room</button>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById("temp-btn").addEventListener("click", () => {
+                document.getElementById("chatitem").style.display = "block"; // Show the chatitem
+            });
+
+            document.getElementById("newroombtn").addEventListener("click", () => {
+                window.location.href = "/createroom";
+            })
+            document.getElementById("joinroombtn").addEventListener("click", () => {
+                window.location.href = "/joinroom";
+            })
+        </script>
+
+</body>
