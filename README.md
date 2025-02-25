@@ -1,4 +1,42 @@
-# FULL STACK CHAT-APPLICATION
+# FULL STACK CHAT-APPLICATION 
+
+**COMPANY**: CODITECH IT SOLUTIONS
+
+**NAME**: SACHIN KUMAR
+
+**INTERN ID**: CT6WGWQ
+
+**DOMAIN**: FULL STACK WEB DEVELOPMENT
+
+**BATCH DURATION**: January 10th, 2025 to February 25th, 2025.
+
+**MENTOR NAME**: NEELA SANTHOSH KUMAR
+
+# ouputs 
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+
+  <!-- Row 1 -->
+  <img src="https://github.com/user-attachments/assets/c70613b2-e175-40f7-9ffb-09008f340020" alt="Home Page" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <img src="https://github.com/user-attachments/assets/cfa5a713-6915-4daa-9d52-930c0643094c" alt="Login Page" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <img src="https://github.com/user-attachments/assets/example1.jpg" alt="Signup Page" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <img src="https://github.com/user-attachments/assets/example2.jpg" alt="Weather Results" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+
+  <!-- Row 2 -->
+  <img src="https://github.com/user-attachments/assets/example3.jpg" alt="Forecast Page" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <img src="https://github.com/user-attachments/assets/example4.jpg" alt="Error Handling" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <img src="https://github.com/user-attachments/assets/example5.jpg" alt="Responsive Design" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <img src="https://github.com/user-attachments/assets/example6.jpg" alt="User Dashboard" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+
+  <!-- Row 3 -->
+  <img src="https://github.com/user-attachments/assets/example7.jpg" alt="Dark Mode" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <img src="https://github.com/user-attachments/assets/example8.jpg" alt="Settings" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <img src="https://github.com/user-attachments/assets/example9.jpg" alt="Profile Page" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <img src="https://github.com/user-attachments/assets/example10.jpg" alt="Weather Alerts" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+
+</div>
+
+
 A fully functional real-time chat application built using HTML, CSS, JavaScript, Node.js, Express.js, MongoDB, and Socket.io. It includes features like user authentication, one-to-one and group chats, file sharing, and real-time updates with a visually appealing and responsive design.
 # 1.introduction
 Welcome to the Real-Time Chat Application, a robust and interactive platform designed for seamless communication. This application enables users to connect instantly through private or group chats, offering real-time messaging and file-sharing capabilities. With a focus on performance, responsiveness, and user experience, this chat app leverages modern web technologies to deliver a smooth and engaging communication environment.
