@@ -36,6 +36,19 @@
 
 </div>
 
+<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+
+  <!-- Row 1 -->
+  <img src="https://github.com/user-attachments/assets/4fd76e65-fd1d-44bb-8fef-ecce882e74b7" alt="Home Page" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <img src="https://github.com/user-attachments/assets/38f46f99-7f16-4192-9f8b-a6309dd2730c" alt="Login Page" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <img src="https://github.com/user-attachments/assets/ffff4d43-aa57-4c7f-bc77-e8c9e800e1cd" alt="Sign Up Page" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <img src="https://github.com/user-attachments/assets/2191cd96-0e22-42a1-aa45-433115a3bbd0" alt="Weather Dashboard" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+
+  <!-- Row 2 -->
+  <img src="https://github.com/user-attachments/assets/a76c2468-b452-49c9-b41d-fe87fff2ae20" alt="Settings Page" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <img src="https://github.com/user-attachments/assets/1524dbcb-731d-4096-93e8-8b27ab07bbe1" alt="Forecast Page" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+</div>
+
 A fully functional real-time chat application built using HTML, CSS, JavaScript, Node.js, Express.js, MongoDB, and Socket.io. It includes features like user authentication, one-to-one and group chats, file sharing, and real-time updates with a visually appealing and responsive design.
 # 1.introduction
 Welcome to the Real-Time Chat Application, a robust and interactive platform designed for seamless communication. This application enables users to connect instantly through private or group chats, offering real-time messaging and file-sharing capabilities. With a focus on performance, responsiveness, and user experience, this chat app leverages modern web technologies to deliver a smooth and engaging communication environment.
