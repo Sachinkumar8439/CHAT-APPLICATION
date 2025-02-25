@@ -14,28 +14,27 @@
 
 # ouputs 
 
-<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
 
   <!-- Row 1 -->
-  <img src="https://github.com/user-attachments/assets/c70613b2-e175-40f7-9ffb-09008f340020" alt="Home Page" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-  <img src="https://github.com/user-attachments/assets/cfa5a713-6915-4daa-9d52-930c0643094c" alt="Login Page" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-  <img src="https://github.com/user-attachments/assets/example1.jpg" alt="Signup Page" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-  <img src="https://github.com/user-attachments/assets/example2.jpg" alt="Weather Results" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <img src="https://github.com/user-attachments/assets/fe97a64b-b621-4690-a301-1029b55d48a1"  width="400" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <img src="https://github.com/user-attachments/assets/5c8abb02-1143-4102-bfaf-d291d438803d"  width="400" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <img src="https://github.com/user-attachments/assets/d3fcd242-3468-4ba3-8397-c138f5d71c9d"  width="400" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <img src="https://github.com/user-attachments/assets/41283812-440e-43ef-bd2e-14704d73ea61"  width="400" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
 
   <!-- Row 2 -->
-  <img src="https://github.com/user-attachments/assets/example3.jpg" alt="Forecast Page" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-  <img src="https://github.com/user-attachments/assets/example4.jpg" alt="Error Handling" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-  <img src="https://github.com/user-attachments/assets/example5.jpg" alt="Responsive Design" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-  <img src="https://github.com/user-attachments/assets/example6.jpg" alt="User Dashboard" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <img src="https://github.com/user-attachments/assets/f0920008-b443-40cc-a21c-b4d9c4b002fe"  width="400" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <img src="https://github.com/user-attachments/assets/46ec7165-af94-46f1-8912-2a1fb3b03a6b"  width="400" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <img src="https://github.com/user-attachments/assets/51ad64d5-5f40-44a9-8c4c-0ffff20ba446"  width="400" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <img src="https://github.com/user-attachments/assets/428b5aed-fb00-4169-9983-ef27b8fe9dd7"  width="400" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
 
   <!-- Row 3 -->
-  <img src="https://github.com/user-attachments/assets/example7.jpg" alt="Dark Mode" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-  <img src="https://github.com/user-attachments/assets/example8.jpg" alt="Settings" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-  <img src="https://github.com/user-attachments/assets/example9.jpg" alt="Profile Page" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-  <img src="https://github.com/user-attachments/assets/example10.jpg" alt="Weather Alerts" width="200" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <img src="https://github.com/user-attachments/assets/dbd364b8-272a-4892-9798-d35f72940624"  width="400" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <img src="https://github.com/user-attachments/assets/915ee3c6-635e-4937-8ed8-a6b6062c3ef5"  width="400" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <img src="https://github.com/user-attachments/assets/6df3ecf6-1cee-45fc-a4ed-ce15716f00cf"  width="400" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
 
 </div>
-
 
 A fully functional real-time chat application built using HTML, CSS, JavaScript, Node.js, Express.js, MongoDB, and Socket.io. It includes features like user authentication, one-to-one and group chats, file sharing, and real-time updates with a visually appealing and responsive design.
 # 1.introduction
