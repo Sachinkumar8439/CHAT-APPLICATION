@@ -1,32 +1,28 @@
-// const { response } = require("express");
 
-// const { response } = require("express");
-
-// const { response } = require("express");
 
 const shownotification = (message) => {
-    // Create the notification element
+
     let html = `<p style="position:absolute;background-color:black;border-radius:10px;padding:20px;font_size:15px text-align:center;top:20px;right:10px;color:white;" id="notificationbar" class="show-notification">
       ${message}
     </p>`;
   
-    // Append it to the main container
+
     $('body').append(html);
   
-    // Select the notification bar
+    
     const notificationBar = document.getElementById("notificationbar");
   
-    // Trigger the enter animation
+    
     setTimeout(() => {
       notificationBar.classList.add("translatex");
     }, 10); // Short delay to ensure DOM updates
   
-    // Trigger the exit animation and remove the notification
+    
     setTimeout(() => {
       notificationBar.classList.remove("translatex");
       notificationBar.classList.add("exit-translatex");
   
-      // Remove the notification after the exit animation
+      
       setTimeout(() => {
         notificationBar.remove();
       }, 500); // Match the CSS transition duration
