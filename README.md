@@ -144,7 +144,7 @@ Ensure you have the following installed on your system:
    ```
 3. Navigate to the project directory:
    ```bash
-   cd <repository-name>
+   cd Chat-APPLICATION
    ```
 
 ---
